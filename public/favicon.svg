@@ -1,0 +1,13 @@
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark rounded background -->
+  <rect width="24" height="24" rx="5" fill="#0f0f1a"/>
+  <!-- Top URL variant converging to canonical point -->
+  <line x1="2" y1="7" x2="11" y2="12" stroke="#7c6dfa" stroke-width="2" stroke-linecap="round"/>
+  <!-- Bottom URL variant converging to canonical point -->
+  <line x1="2" y1="17" x2="11" y2="12" stroke="#7c6dfa" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <!-- Canonical node -->
+  <circle cx="12" cy="12" r="2.2" fill="#7c6dfa"/>
+  <!-- Arrow pointing to canonical destination -->
+  <line x1="14.2" y1="12" x2="20" y2="12" stroke="#7c6dfa" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="17,9.5 20,12 17,14.5" stroke="#7c6dfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
