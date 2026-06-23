@@ -208,6 +208,12 @@ const urlInfoEl  = document.getElementById('urlInfo')
 const checksEl   = document.getElementById('checks')
 const introEl    = document.getElementById('intro')
 
+const initialUrl = new URLSearchParams(window.location.search).get('url')
+if (initialUrl) {
+    urlInput.value = initialUrl
+    form.requestSubmit()
+}
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
@@ -245,6 +251,7 @@ form.addEventListener('submit', async (e) => {
         checksEl.replaceChildren(...checks.map(buildCheckEl))
         resultsEl.classList.remove('hidden')
         introEl.classList.add('hidden')
+        history.pushState(null, '', `?url=${encodeURIComponent(canonicalUrl)}`)
     } catch (err) {
         inputError.textContent = err.message || 'An unexpected error occurred.'
         inputError.classList.remove('hidden')
