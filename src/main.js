@@ -208,12 +208,6 @@ const urlInfoEl  = document.getElementById('urlInfo')
 const checksEl   = document.getElementById('checks')
 const introEl    = document.getElementById('intro')
 
-const initialUrl = new URLSearchParams(window.location.search).get('url')
-if (initialUrl) {
-    urlInput.value = initialUrl
-    form.requestSubmit()
-}
-
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
@@ -260,3 +254,9 @@ form.addEventListener('submit', async (e) => {
         submitBtn.textContent = 'Check'
     }
 })
+
+const initialUrl = new URLSearchParams(window.location.search).get('url')
+if (initialUrl) {
+    urlInput.value = initialUrl
+    form.requestSubmit()
+}
