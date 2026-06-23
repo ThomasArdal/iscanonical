@@ -9,7 +9,10 @@ function parseUrl(input) {
     input = input.trim()
     if (!/^https?:\/\//i.test(input)) input = 'https://' + input
     try {
-        return new URL(input)
+        const url = new URL(input)
+        // Require at least one dot — bare words like "hulubuliu" are not public URLs
+        if (!url.hostname.includes('.')) return null
+        return url
     } catch {
         return null
     }
@@ -27,7 +30,7 @@ function invertUrl(uri) {
     }
 
     const parsed = psl.parse(host)
-    if (parsed && !parsed.error) {
+    if (parsed && !parsed.error && parsed.domain) {
         if (parsed.subdomain === 'www') {
             host    = parsed.domain
             changed = true
