@@ -5,7 +5,7 @@ const ALLOWED_ORIGINS = new Set([
 
 const MAX_REDIRECTS = 10
 const REQUEST_HEADERS = {
-    'User-Agent': 'elmahio-uptimebot/2.0',
+    'User-Agent': 'iscanonical-bot/1.0',
     'Accept': 'text/html,*/*;q=0.1',
 }
 
